@@ -11,10 +11,10 @@
     <script src="Build/laror.loader.js"></script>
     <script>
       const canvas = document.querySelector("#unity-canvas");
-      const scale = 1920/window.innerWidth;
-      const height = 1080/scale;
-      canvas.width = window.innerWidth;
-      canvas.height = height;
+      const scale = 1080/window.innerHeight;
+      const width = 1920/scale;
+      canvas.width = width;
+      canvas.height = window.innerHeight;
       canvas.style.position = "absolute";
       canvas.style.top = "0";
       canvas.style.left = "0";
