@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <title>Unity WebGL Player | labeto</title>
+  </head>
+  <body>
+    <canvas id="unity-canvas" width="1920" height="1080"></canvas>
+    <script src="Build/laror.loader.js"></script>
+    <script>
+      const canvas = document.querySelector("#unity-canvas");
+      const scale = 1920/window.innerWidth;
+      const height = 1080/scale;
+      canvas.width = window.innerWidth;
+      canvas.height = height;
+      canvas.style.position = "absolute";
+      canvas.style.top = "0";
+      canvas.style.left = "0";
+      canvas.style.background = "#222";
+      document.body.style.textAlign = "left";
+
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/laror.data",
+        frameworkUrl: "Build/laror.framework.js",
+        codeUrl: "Build/laror.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "labeto",
+        productVersion: "1.0",
+        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      });
+    </script>
+  </body>
+</html>
