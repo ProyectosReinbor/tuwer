@@ -99,6 +99,8 @@
 
       loadingBar.style.display = "block";
 
+      container.webkitRequestFullScreen();
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
